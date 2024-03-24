@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import CopywritingForm from "./components/CopywritingForm";
+import "./App.css"; // Import standard CSS file
 
 const App = () => {
   const [generatedCopy, setGeneratedCopy] = useState("");
@@ -29,7 +30,6 @@ const App = () => {
 
       const botMessage = response.data.choices[0].message.content;
       setGeneratedCopy(botMessage);
-      // Use botMessage as needed in your application
     } catch (error) {
       console.error("Error generating copy:", error);
     }
@@ -39,10 +39,10 @@ const App = () => {
     <div>
       <CopywritingForm onSubmit={generateCopy} />
       {generatedCopy && (
-        <div>
-          <h3>Generated Copy:</h3>
-          <p>{generatedCopy}</p>
-          <h4>END</h4>
+        <div className="generatedCopyContainer">
+          <h3 className="generatedCopyHeader">Generated Copy:</h3>
+          <p className="generatedCopyText">{generatedCopy}</p>
+          <h4 className="generatedCopyEnd">END</h4>
         </div>
       )}
     </div>
