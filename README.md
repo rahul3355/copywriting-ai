@@ -1,11 +1,10 @@
-<<<<<<< HEAD
+
 # copywriting-ai
 An intuitive React-based application leveraging OpenAI's GPT-3.5-turbo model to generate creative and compelling copywriting text.
 =======
 # Copywriting-ai
 
 An intuitive React-based application leveraging OpenAI's GPT-3.5-turbo model to generate creative and compelling copywriting text. Users input product details, ideal customer profiles, and desired outcomes to receive customized marketing copy, streamlining content creation for businesses and creatives alike. Easy to use and implement, this project showcases the integration of AI technology with modern web development for practical and innovative applications."
->>>>>>> master
 
 This application is architected as a client-side web interface built with React, a popular JavaScript library for constructing user interfaces with a component-based architecture. It interfaces with OpenAI's GPT-3.5-turbo model through the OpenAI API, leveraging Axios for HTTP requests. The application encapsulates the functionality of generating tailored copywriting content based on user inputs including product name, description, ideal customer, and dream outcome. Below is a detailed breakdown of its operational workflow and underlying technical mechanisms:
 
