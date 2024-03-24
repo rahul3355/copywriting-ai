@@ -1,0 +1,43 @@
+/* src/components/CopywritingForm.module.css */
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f4f0ec; /* A soft, royal background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inputField,
+  .textAreaField {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .inputField:focus,
+  .textAreaField:focus {
+    border-color: #665d5b; /* Royal accent */
+    outline: none;
+  }
+  
+  .buttonSubmit {
+    background-color: #665d5b; /* Royal accent */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonSubmit:hover {
+    background-color: #504a48; /* Darker royal accent */
+  }
+  

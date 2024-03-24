@@ -1,6 +1,7 @@
 // src/components/CopywritingForm.js
 
 import React, { useState } from 'react';
+import styles from './CopywritingForm.module.css'; // Import the CSS module
 
 const CopywritingForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -21,8 +22,9 @@ const CopywritingForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.formContainer}>
       <input
+        className={styles.inputField}
         name="productName"
         value={formData.productName}
         onChange={handleChange}
@@ -30,6 +32,7 @@ const CopywritingForm = ({ onSubmit }) => {
         required
       />
       <textarea
+        className={styles.textAreaField}
         name="description"
         value={formData.description}
         onChange={handleChange}
@@ -37,6 +40,7 @@ const CopywritingForm = ({ onSubmit }) => {
         required
       />
       <input
+        className={styles.inputField}
         name="idealCustomer"
         value={formData.idealCustomer}
         onChange={handleChange}
@@ -44,13 +48,14 @@ const CopywritingForm = ({ onSubmit }) => {
         required
       />
       <input
+        className={styles.inputField}
         name="dreamOutcome"
         value={formData.dreamOutcome}
         onChange={handleChange}
         placeholder="Dream Outcome"
         required
       />
-      <button type="submit">Generate Copy</button>
+      <button type="submit" className={styles.buttonSubmit}>Generate Copy</button>
     </form>
   );
 };
