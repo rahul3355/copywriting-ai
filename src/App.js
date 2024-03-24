@@ -7,11 +7,13 @@ import "./App.css"; // Import standard CSS file
 
 const App = () => {
   const [generatedCopy, setGeneratedCopy] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const generateCopy = async (formData) => {
     const prompt = `Generate a compelling copy for a product named ${formData.productName}. Brief description: ${formData.description}. Target customer: ${formData.idealCustomer}. Desired outcome: ${formData.dreamOutcome}.`;
 
     try {
+      setIsLoading(true);
       const response = await axios.post(
         "https://api.openai.com/v1/chat/completions",
         {
@@ -33,19 +35,26 @@ const App = () => {
     } catch (error) {
       console.error("Error generating copy:", error);
     }
+    finally{
+      setIsLoading(false);
+    }
   };
 
   return (
     <div>
-      <CopywritingForm onSubmit={generateCopy} />
-      {generatedCopy && (
-        <div className="generatedCopyContainer">
-          <h3 className="generatedCopyHeader">Generated Copy:</h3>
-          <p className="generatedCopyText">{generatedCopy}</p>
-          <h4 className="generatedCopyEnd">END</h4>
-        </div>
-      )}
-    </div>
+    <CopywritingForm onSubmit={generateCopy} />
+    {isLoading ? (
+      <div className="loadingContainer">
+        <div className="loader"></div> {/* This will render the loading spinner */}
+      </div>
+    ) : generatedCopy && (
+      <div className="generatedCopyContainer">
+        <h3 className="generatedCopyHeader">Generated Copy:</h3>
+        <p className="generatedCopyText">{generatedCopy}</p>
+        <h4 className="generatedCopyEnd">END</h4>
+      </div>
+    )}
+  </div>
   );
 };
 

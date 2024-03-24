@@ -26,3 +26,44 @@
   color: #5d3754; /* Matching the header */
   font-family: 'Georgia', serif;
 }
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust to fit your design */
+}
+
+.loader {
+  border: 5px solid #ddd; /* Light shade for contrast */
+  border-top-color: #4b2c5e; /* Deep purple for a royal look */
+  border-bottom-color: #4b2c5e; /* Deep purple for consistency */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+    border-width: 6px;
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* Optionally, add a fade-in effect when the loader appears */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.loadingContainer {
+  animation: fadeIn 0.5s;
+}
