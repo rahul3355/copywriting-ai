@@ -45,7 +45,8 @@ const App = () => {
     <CopywritingForm onSubmit={generateCopy} />
     {isLoading ? (
       <div className="loadingContainer">
-        <div className="loader"></div> {/* This will render the loading spinner */}
+        {/* <div className="loader"></div>*/}
+        <div className="puzzleLoader"></div>
       </div>
     ) : generatedCopy && (
       <div className="generatedCopyContainer">
